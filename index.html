@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encouraging Messages Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Dark Mode Toggle -->
+    <label class="switch">
+      <input type="checkbox" id="dark-mode-toggle" />
+      <span class="slider"></span>
+    </label>
+
+    <!-- Gallery Section -->
+    <div
+      id="gallery"
+      class="gallery"
+      role="grid"
+      aria-label="Nature Image Gallery"
+    >
+      <div class="image-card">
+        <img data-src="images/first.jpg" alt="Image 1" class="lazyload" />
+        <div class="message">
+          <h2>You're Doing Great!</h2>
+          <p>Keep up the good work and stay positive.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img data-src="images/second.jpg" alt="Image 2" class="lazyload" />
+        <div class="message">
+          <h2>Believe in Yourself!</h2>
+          <p>Success is just around the corner.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img data-src="images/third.jpg" alt="Image 3" class="lazyload" />
+        <div class="message">
+          <h2>Stay Strong!</h2>
+          <p>Every day is a new opportunity.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img data-src="images/fourth.jpg" alt="Image 4" class="lazyload" />
+        <div class="message">
+          <h2>Keep Smiling!</h2>
+          <p>Your positivity is inspiring.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img data-src="images/fiveth.jpg" alt="Image 5" class="lazyload" />
+        <div class="message">
+          <h2>You're Amazing!</h2>
+          <p>Don't let anything hold you back.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img data-src="images/sixth.jpg" alt="Image 6" class="lazyload" />
+        <div class="message">
+          <h2>Never Give Up!</h2>
+          <p>Every challenge is a chance to grow.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LazySizes Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+      async
+    ></script>
+    <!-- Main JavaScript -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
