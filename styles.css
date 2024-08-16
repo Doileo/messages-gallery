@@ -1,0 +1,167 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: relative;
+  width: 3.125rem; /* 50px */
+  height: 1.625rem; /* 26px */
+  background-color: #b5bfaa;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 1.375rem; /* 22px */
+  width: 1.375rem; /* 22px */
+  top: 0.125rem; /* 2px */
+  border-radius: 50%;
+  background-color: #354c20;
+  transition: transform 0.3s;
+  transform: translateX(0.125rem); /* 2px */
+}
+
+input:checked + .slider {
+  background-color: #e0e0e0;
+}
+
+input:checked + .slider::before {
+  transform: translateX(1.5rem); /* 24px */
+  background-color: #121212;
+}
+
+/* Image Card Styles */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem; /* 20px */
+  padding: 1.25rem; /* 20px */
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 37.5rem; /* 600px */
+}
+
+.image-card {
+  position: relative;
+  width: 100%;
+  height: 18.75rem; /* 300px */
+  overflow: hidden;
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  perspective: 1000px;
+  transition: transform 0.3s;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.6s ease;
+}
+
+.message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b5bfaa;
+  color: #354c20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  padding: 0.625rem; /* 10px */
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.875rem; /* 14px */
+  font-weight: bold;
+}
+
+.image-card:hover .message {
+  opacity: 1;
+}
+
+.image-card:hover img {
+  opacity: 0.3;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+}
+
+/* Media Queries for Tablets and Desktops */
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    margin: 2.5rem auto;
+    max-width: 800px;
+  }
+
+  .message {
+    font-size: 1rem; /* 16px */
+    padding: 0.9375rem; /* 15px */
+  }
+
+  .image-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    max-width: 75rem; /* 1200px */
+    gap: 2.1875rem; /* 35px */
+  }
+
+  .message {
+    font-size: 1.125rem; /* 18px */
+    padding: 1.25rem; /* 20px */
+  }
+
+  .image-card {
+    height: 21.875rem; /* 350px */
+  }
+
+  .image-card:hover {
+    transform: scale(1.05);
+  }
+}
